@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "/logo.png";
-
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 const Navbar = () => {
   return (
     <header className='font-sans'>
@@ -28,8 +28,18 @@ const Navbar = () => {
                     </div>
                 </div>
           <a href="/">Explore</a>
+          <div className='text-blue-400'>
+          <SignedOut>
+            <SignInButton />
+            </SignedOut>
+            <SignedIn>
+            <UserButton />
+            </SignedIn>
+          </div>
         </div>
+    
       </nav>
+      
     </header>
   );
 };

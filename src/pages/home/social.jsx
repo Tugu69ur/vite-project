@@ -3,14 +3,14 @@ import React from 'react';
 const Social = () => {
   return (
     <div>
-      <div className="text-center mb-16">
+      <div className="text-center ml-11 mb-16">
         <h2 className="text-4xl font-bold mb-2">Social Media</h2>
         <p className="text-gray-500">
           Details to details is what makes Hexashop different from the other themes.
         </p>
       </div>
 
-      <div className="flex justify-center space-x-4 mb-16">
+      <div className="flex justify-center space-x-4 mb-16 w-[1800px]">
         {[
           "https://storage.googleapis.com/a1aa/image/Q1WClzwvJH6NA5seOwiaVxHEh1qLU21eF9yBnmwxqpfxFRbnA.jpg",
           "https://storage.googleapis.com/a1aa/image/0WfVz1jE2T1eyUXh6Scbs3cGsTuhl9xCFfWfSz8oOVOULi2OB.jpg",
@@ -30,7 +30,7 @@ const Social = () => {
         ))}
       </div>
 
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 w-[1800px]">
         <h2 className="text-3xl font-bold mb-2">
           By Subscribing To Our Newsletter You Can Get 30% Off
         </h2>
@@ -54,7 +54,7 @@ const Social = () => {
         </div>
       </div>
 
-      <div className="flex justify-between flex-wrap">
+      <div className="flex justify-between flex-wrap w-[1600px] ml-[150px]">
         {[
           { title: 'Store Location:', info: 'Sunny Isles Beach, FL 33160, United States' },
           { title: 'Work Hours:', info: '07:30 AM - 9:30 PM Daily' },

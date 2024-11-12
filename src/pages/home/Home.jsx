@@ -5,6 +5,7 @@ import Women_l from "./women_l"
 import Kid_l from "./kid_l"
 import Explore from "./explore"
 import Social from "./social"
+import Product from "./product"
 
 const home = () => {
   return (
@@ -14,7 +15,9 @@ const home = () => {
     <Women_l />
     <Kid_l/>
     <Explore/>
+    <Product/>
     <Social/>
+
     </>
 
   )
