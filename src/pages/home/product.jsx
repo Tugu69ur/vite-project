@@ -24,7 +24,7 @@ const Products = () => {
     <div className="grid grid-cols-2 w-[1600px] ml-[200px] mt-10 sm:grid-cols-3 lg:grid-cols-5 gap-10 p-3">
       {products.map((product) => (
         <Link
-          to={`/product/${product.id}`}
+          to={`/products/${product.id}`}
           key={product.id}
           className="border p-4 rounded shadow-md transition-transform duration-300 transform hover:scale-105 hover:shadow-xl"
         >

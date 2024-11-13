@@ -5,6 +5,7 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${productId}`)
@@ -16,11 +17,12 @@ const ProductDetails = () => {
       .catch((error) => console.error('Error fetching product:', error));
   }, [productId]);
 
+  const handleAddToCart = () => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
   if (loading) return <p>Loading...</p>;
   if (!product) return <p>Product not found.</p>;
-  console.log('Product ID:', productId); 
-
-  console.log(product);
 
   return (
     <div className="max-w-4xl mx-auto mt-10 p-6 shadow-lg rounded-lg bg-white">
@@ -52,7 +54,10 @@ const ProductDetails = () => {
           </div>
 
           <div className="mt-8 flex gap-4">
-            <button className="px-6 py-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+            <button
+              onClick={handleAddToCart}
+              className="px-6 py-3 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+            >
               Add to Cart
             </button>
             <button className="px-6 py-3 rounded border border-gray-300 text-gray-800 font-semibold hover:bg-gray-100 transition">
