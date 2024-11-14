@@ -1,13 +1,17 @@
 import { Outlet } from "react-router-dom";
-import "./App.css";
 import Navbar from "./components/navbar";
 import { CartProvider } from "./pages/home/CartContext"; 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <CartProvider>
       <Navbar />
-      <Outlet />
+      <div className="pt-20">
+        <Outlet />
+      </div>
+      <ToastContainer position="bottom-right" />
     </CartProvider>
   );
 };

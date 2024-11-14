@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import {toast} from 'react-toastify';
+import { useCart } from './CartContext';
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState([]);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${productId}`)
@@ -18,7 +20,10 @@ const ProductDetails = () => {
   }, [productId]);
 
   const handleAddToCart = () => {
-    setCart((prevCart) => [...prevCart, product]);
+    if (product) {
+      addToCart(product);
+      toast.success('Added to cart');
+    }
   };
 
   if (loading) return <p>Loading...</p>;
