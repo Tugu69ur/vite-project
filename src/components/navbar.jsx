@@ -3,7 +3,7 @@ import logo from "/logo.png";
 import cartlogo from "/shopping-bag.png";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { useCart } from "../pages/home/CartContext";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { cart } = useCart();
@@ -40,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className='font-sans fixed top-0 left-0 right-0 bg-white z-50 shadow-md'>
+    <header className='font-sans   top-0 left-0 right-0 bg-white z-50 shadow-md'>
       <nav className="flex items-center justify-between h-20 mx-auto px-4 md:px-10 max-w-7xl">
         <a href="/" className="flex-shrink-0">
           <img src={logo} alt="Company Logo" className="h-10" />
@@ -82,11 +82,20 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex items-center">
-          <img src={cartlogo} alt="" className='h-7'/>
-          <a href="/cart" className="hover:text-gray-700 ml-2 font-bold transition-colors">
-            Cart ({getCartCount()})
-          </a>
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center">
+            <img src={cartlogo} alt="" className='h-7'/>
+            <a href="/cart" className="hover:text-gray-700 ml-2 font-bold transition-colors">
+              Cart ({getCartCount()})
+            </a>
+          </div>
+          
+          <Link 
+            to="/monopo" 
+            className="font-bold text-gray-800 hover:text-gray-600 transition-colors"
+          >
+            Monopo
+          </Link>
         </div>
       </nav>
     </header>

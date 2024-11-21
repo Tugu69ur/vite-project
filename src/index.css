@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&family=Noto+Sans+JP:wght@200;300&display=swap');
+@import url("https://use.typekit.net/your-kit-code.css"); /* You'll need Adobe Fonts access */
+
+/* Fallback font stack if you don't have Adobe Fonts access */
+@font-face {
+  font-family: 'neue-haas-grotesk-display';
+  src: local('Helvetica Neue');
+  font-weight: 275;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add smooth transition defaults */
+.absolute {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

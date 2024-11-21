@@ -9,6 +9,7 @@ import Home from './pages/home/Home';
 import ProductDetails from './pages/home/ProductDetails';
 import Cart from './pages/home/Cart';
 import { CartProvider } from './pages/home/CartContext';
+import Monopo from './pages/home/Monopo';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: '/products', element: <Products /> },
       { path: '/products/:productId', element: <ProductDetails /> },
       { path: '/cart', element: <Cart /> },
+      { path: '/monopo', element: <Monopo /> },
     ],
   },
 ]);

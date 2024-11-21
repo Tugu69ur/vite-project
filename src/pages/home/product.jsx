@@ -19,7 +19,6 @@ const Products = () => {
         const productsData = data.products.slice(0, 30);
         setProducts(productsData);
         setFilteredProducts(productsData);
-        // Extract unique categories
         const uniqueCategories = [...new Set(productsData.map(product => product.category))];
         setCategories(uniqueCategories);
         setLoading(false);
@@ -30,16 +29,13 @@ const Products = () => {
       });
   }, []);
 
-  // Apply filters whenever category or price range changes
   useEffect(() => {
     let filtered = [...products];
     
-    // Apply category filter
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(product => product.category === selectedCategory);
     }
     
-    // Apply price filter
     filtered = filtered.filter(product => 
       product.price >= priceRange.min && product.price <= priceRange.max
     );
@@ -64,7 +60,6 @@ const Products = () => {
       <h2 className="text-3xl font-bold mb-8">Our Products</h2>
       
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Products Grid - Now on the left side */}
         <div className="md:w-3/4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProducts.map((product) => (
@@ -118,7 +113,6 @@ const Products = () => {
           )}
         </div>
 
-        {/* Filters Section - Now on the right side */}
         <div className="md:w-1/4">
           <div className="bg-white p-6 rounded-lg shadow-md sticky top-4">
             <h3 className="text-xl font-semibold mb-6">Filters</h3>
