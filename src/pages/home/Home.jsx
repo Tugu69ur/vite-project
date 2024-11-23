@@ -7,7 +7,8 @@ import Explore from "./explore"
 import Social from "./social"
 import Product from "./product"
 
-const Home = () => {
+const Home = () => { 
+  
   return (
     <>
       <Banner />
